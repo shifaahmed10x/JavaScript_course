@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=video, initial-scale=1.0" />
+    <title>Anime website</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .trailer {
+        opacity: 0.4;
+          transition: opacity 0.15s;   
+    
+      }
+      .trailer:hover{
+        opacity: 1;
+      }
+      nav ul li{
+        list-style: none;
+        padding: 10px;
+        color: aliceblue;
+        background-color: rgb(62, 12, 12);
+        margin: 6px;
+        border-radius: 10px;
+
+
+
+    }
+    nav ul{
+      display: flex;
+      justify-content: right;
+      
+    }
+    .img_1{
+    }
+
+    </style>
+  </head>
+  <body style="border: 5px; background-color: rgb(238, 236, 233)">
+    <!--IMAGE-->
+    <nav>
+      <ul>
+        <li>HOME</li>
+        <li>ABOUT</li>
+        <li>CONTACT US</li>
+        <li>ANIMES</li>
+      </ul>
+    </nav>
+    <h1 style="color: rgb(35, 39, 39)" ;>ANIME WEB DRAMA</h1>
+    <br />
+    <h2
+      style="
+        border: 1cm;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: rgb(192, 55, 112);
+      "
+    >
+      New Trailer Released
+    </h2>
+    <video class="trailer" height="300" controls poster="img/nezuko.png">
+      <source
+        src="img/Tanjiro Kamado.mp4"/>
+      Your browser does not support the video tag.
+    </video>
+
+    <p style="color: rgb(19, 0, 4)">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+      similique ipsam earum. Asperiores sed nesciunt similique non consequatur
+      quisquam cupiditate fugit? Dolorum, dolorem?
+    </p>
+    <img class = "img_1" height="450" src="img/town-tokyo.webp" alt="Anime" />
+    <br />
+    <br />
+    <br />
+
+    <!--TABLES-->
+    <table>
+      <caption>
+        Anime Releases
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Releares season</th>
+          <th>Release date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Naruto Uzumaki</td>
+          <td rowspan="5">1st season</td>
+          <td>2002-07-16</td>
+        </tr>
+        <tr>
+          <td>One Punch Man</td>
+          <td>2007-04-03</td>
+        </tr>
+        <tr>
+          <td>Bleach</td>
+          <td>1994-04-18</td>
+        </tr>
+        <tr>
+          <td>Death Note</td>
+          <td>2006-10-19</td>
+        </tr>
+        <tr>
+          <td>Fairy Tail</td>
+          <td>1995-04-12</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--unordered LISTS Anime-->
+    <h2>Popular Anime</h2>
+    <ul type="square">
+      <li>Naruto Uzumaki</li>
+      <li>One Punch Man</li>
+      <li>Bleach</li>
+      <li>Death Note</li>
+      <li>Fairy Tail</li>
+    </ul>
+
+    <!--Oredered list anime-->
+    <h2>Hidden Gems</h2>
+    <ol type="i">
+      <li>Dragon Ball Z</li>
+      <li>Bleach</li>
+      <li>Naruto Uzumaki</li>
+      <li>Death Note</li>
+      <li>Fairy Tail</li>
+    </ol>
+
+    <h1>Anime Feedback Form</h1>
+    <form action="submit.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br /><br />
+      <label for="gender">Gender:</label><br />
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label><br /><br />
+      <label for="animename">Anime Names</label><br />
+      <select name="Anime Names">
+        <option value="naruto">Naruto Uzumaki</option>
+        <option value="onepunchman">One Punch Man</option>
+        <option value="bleach">Bleach</option>
+        <option value="deathnote">Death Note</option>
+        <option value="fairytail">Fairy Tail</option>
+        <option value="dragonballz">Dragon Ball Z</option></select
+      ><br /><br />
+      <label for="categary">Confirm</label>
+      <input
+        type="checkbox"
+        id="anime"
+        name="categary"
+        value="anime"
+      /><br /><br />
+      <label for="comment">Comment:</label><br />
+      <textarea id="comment" name="comment" rows="4" cols="50" required>
+      Enter your Feedback...</textarea
+      ><br /><br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+    <!-- <script src="script.js"></script>-->
+  </body>
+</html>

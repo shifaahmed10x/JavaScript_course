@@ -1,0 +1,11 @@
+/*body {
+  background-color: rgb(202, 211, 181);
+  color: rgb(10, 0, 0);
+}*/
+
+td{
+  border: 1px solid black;
+  padding: 5px;
+  background-color: black;
+  color:wheat;
+}

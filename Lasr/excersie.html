@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let name = prompt("Enter your full name");
+        let cleanname = name.replace(/\s+/g, "");
+        let length = cleanname.length;
+        let username = "@" + cleanname + length;
+        console.log("Username: ", username);
+    </script>
+</body>
+
+</html>

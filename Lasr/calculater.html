@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="display" disabled />
+    <button onclick="appendToCalculation('1')">1</button>
+    <button onclick="appendToCalculation('2')">2</button>
+    <button onclick="appendToCalculation('3')">3</button>
+    <button onclick="appendToCalculation('+')">+</button>
+    <button onclick="calculateResult()">=</button>
+
+    <script>
+        let calculation = ' ';
+
+        function appendToCalculation(value) {
+            calculation += value;
+            document.getElementById('display').value = calculation;
+        }
+
+        function calculateResult() {
+            try {
+                calculation = eval(calculation).toString();
+                document.getElementById('display').value = calculation;
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+                calculation = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
