@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    background-color: #f4f3f3;
+    margin: 0;
+    padding: 0;
+}
+
+#wallpaper{
+    width: 80%;
+    max-width: 600px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#btn_random{
+    display: block;
+    padding: 10px 20px;
+    margin: 20px auto;
+    font-size: 18px;
+    cursor: pointer;
+
+}
