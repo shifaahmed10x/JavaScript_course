@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Picker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+
+        <h3>Select Your Wallpaper</h3>
+
+        <button id="btn-random">Random Pick</button>
+
+        <img id="wallpaper" src="img/img2.wallspic.com-anime-art-illustration-artist-plant-4096x2304.jpg"
+            alt="Wallpaper" />
+
+        <!-- Wallpaper Upload -->
+        <input id="file-input-wallpaper" type="file" accept="image/*">
+        <div id="upload-btn-wallpaper">Upload Wallpaper</div>
+
+        <h3>Add your Details</h3>
+
+        <div id="details-form">
+            <form>
+                <input id="form-name" type="text" placeholder="Name">
+                <input id="form-email" type="email" placeholder="Email">
+                <input id="form-mobile" type="text" placeholder="Mobile No">
+                <input id="form-role" type="text" placeholder="Designation">
+                <textarea id="form-info" placeholder="Write something about yourself"></textarea>
+                <input id="file-input-profile" type="file" accept="image/*">
+                <div id="upload-btn-profile">Upload Profile</div>
+                <input id="form-submit" type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div id="card-container">
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,7 @@
-//----------------------------------------
-// 1. THE DOM 
+// ##############################################################
+//-----------------DOM  ---------------------------------
+//##############################################################
+
 
 // document.querySelector
 // document.getElementById
@@ -32,15 +34,55 @@
 
 //----------------------------------DYNAMIC DOM MANIPULATION-------------------------
 // 1.createElement
+
+// let h1 =document.createElement("h1");
+// h1.textContent ="Hello jii!";
+// //document.querySelector("body").appendChild(h1); // methid 1      
+// document.body.appendChild(h1); // after script 
+// document.body.prepend(h1); // before script
+
 // 2.appendChild
 // 3.removeChild
 // 4.prepend
 
+//--------------Style in js--------------------------
+// 1. h1.classList.add(classname)
+// 2.h1.classList.toggle(classnaem)
+
+// ##############################################################
+//-----------------Event Handling in js ---------------------------------
+//##############################################################
+
+// 1. select the paragraph first 
+// 2.relaize what action to perferm 
+// 3.add event listener to the paragraph 
+
+// let input = document.querySelector("input");
+// input.addEventListener("input",function(dat){
+//    console.log(dat.data);
+
+// });
+
+// let select = document.querySelector("select");
+// let h1 = document.querySelector("h1");
+
+// select.addEventListener("change",function(details){
+//     h1.textContent = ` Device Selected:${details.target.value}`;                         
+// })
+
+// let head = document.querySelector("h1");
+
+// window.addEventListener("keydown", function(event) {
+//     if(event.key === " "){
+//         head.textContent="Space";
+//     }else{
+//       head.textContent=event.key;
+// }
+
+// });
 
 
-
-
-
+ 
 
 
 
