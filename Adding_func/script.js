@@ -1,106 +1,77 @@
-// Elements
-const wallpaper = document.querySelector("#wallpaper");
-const randomBtn = document.querySelector("#btn-random");
+// TAB SWITCH
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".tab-content");
 
-// // Wallpaper upload
-// const wallpaperInput = document.querySelector("#file-input-wallpaper");
-// const wallpaperBtn = document.querySelector("#upload-btn-wallpaper");
+tabs.forEach(tab=>{
+    tab.addEventListener("click",()=>{
+        tabs.forEach(t=>t.classList.remove("active"));
+        contents.forEach(c=>c.classList.remove("active"));
 
-// Profile upload
-const profileInput = document.querySelector("#file-input-profile");
-const profileBtn = document.querySelector("#upload-btn-profile");
-
-
-// Wallpapers list
-const wallpapers = [
-    "img/three.png",
-    "img/img3.wallspic.com-tanjiro_kamado-demon_slayer_kimetsu_no_yaiba-zenitsu_agatsuma-anime-train-2732x1536.png",
-    "img/inosuke-moon-silhouette-83bkvv5cgvw4cvoa.jpg",
-    "img/one punch.png"
-];
-
-// Random wallpaper
-randomBtn.addEventListener("click", () => {
-    const index = Math.floor(Math.random() * wallpapers.length);
-    wallpaper.src = wallpapers[index];
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+    });
 });
 
-// // Wallpaper upload
-// wallpaperBtn.addEventListener("click", () => {
-//     wallpaperInput.click();
-// });
+// WALLPAPER
+const wallpapers = ["img/three.png","img/one punch.png"];
+document.querySelector("#btn-random").onclick = ()=>{
+    const i = Math.floor(Math.random()*wallpapers.length);
+    document.querySelector("#wallpaper-img").src = wallpapers[i];
+};
 
-// wallpaperInput.addEventListener("change", (e) => {
-//     const file = e.target.files[0];
-//     if (file) {
-//         wallpaper.src = URL.createObjectURL(file);
-//         wallpaperBtn.textContent = file.name;
-//     }
-// });
+// PROFILE UPLOAD
+const fileInput = document.querySelector("#file-input-profile");
+const uploadBtn = document.querySelector("#upload-btn-profile");
 
-// Profile upload
-profileBtn.addEventListener("click", () => {
-    profileInput.click();
-});
+uploadBtn.onclick = ()=> fileInput.click();
 
-profileInput.addEventListener("change", (e) => {
+fileInput.addEventListener("change",(e)=>{
     const file = e.target.files[0];
-    if (file) {
-        profileBtn.textContent = file.name;
+    if(file){
+        uploadBtn.textContent = file.name;
     }
 });
 
-//Form 
-const form = document.querySelector("#details-form form");
-const cardContainer = document.querySelector("#card-container");
+// FORM SUBMIT
+const form = document.querySelector("#profile-form");
+const container = document.querySelector("#card-container");
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
+
     const name = document.querySelector("#form-name").value;
-    const email = document.querySelector("#form-email").value;
-    const mobile = document.querySelector("#form-mobile").value;
     const role = document.querySelector("#form-role").value;
     const info = document.querySelector("#form-info").value;
 
-    //geting image
-    const fileInput = document.querySelector("#file-input-profile");
-    const file = fileInput.files[0];
-
-    let imageURL ="";
-    if(file){
-        imageURL = URL.createObjectURL(file);
+    let img = "https://via.placeholder.com/70";
+    if(fileInput.files[0]){
+        img = URL.createObjectURL(fileInput.files[0]);
     }
 
-    // Create a card 
     const card = document.createElement("div");
     card.classList.add("card");
 
-    card.innerHTML =`
-    <img src ="${imageURL}" alt="profile">
-    <h3>${name}</h3>
-    <h5>${role}</h5>
-    <p>${info}</p>
+    card.innerHTML = `
+        <img src="${img}">
+        <h4>${name}</h4>
+        <p>${role}</p>
+        <p>${info}</p>
     `;
 
-    cardContainer.appendChild(card);
-
+    container.appendChild(card);
     form.reset();
+    uploadBtn.textContent = "Upload Profile";
 });
 
+// CHAR COUNT
+const textarea = document.querySelector("#form-info");
+const count = document.querySelector("#char-count span");
 
-const charCount = document.querySelector("#char-count span");
-const formInfo = document.querySelector("#form-info");
+textarea.addEventListener("input",()=>{
+    let left = 100 - textarea.value.length;
+    count.textContent = left;
 
-formInfo.addEventListener("input",()=>{
-    let left = 100 - (formInfo.value.length);
-    charCount.textContent = left;
-
-    if(left >= 0){
-        charCount.style.color ="white";
-    }
-    else{
-        charCount.style.color="red";
-    }
+    count.style.color = left < 0 ? "red" : "white";
 });
 
 
