@@ -25,7 +25,7 @@ html, body {
 }
 
 /* ========== HEADINGS ========== */
-h3 {
+h2 {
     margin-top: 20px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -41,8 +41,7 @@ h3 {
 }
 
 /* ========== BUTTONS ========== */
-#btn-random,
-#upload-btn-wallpaper , #upload-btn-profile{
+#btn-random, #upload-btn-profile{
     background-color: #d40a46;
     text-align: center;
     color: #e2e8f0;
@@ -54,7 +53,6 @@ h3 {
 }
 
 #btn-random:hover,
-#upload-btn-wallpaper:hover ,
 #upload-btn-profile:hover{
     background-color: #334155;
 }
@@ -127,7 +125,7 @@ h3 {
     background-color: #0ea5e9;
 }
 
-#file-input-wallpaper,#file-input-profile{
+#file-input-profile{
     display: none;
 }
 
@@ -177,4 +175,11 @@ h3 {
     font-size: 12px;
     font-weight: 100;
     color: #a1a5ac;
+}
+
+#char-count{
+    margin: -5px;
+    padding-right: 10px;
+    text-align: right;
+    font-size: 10px;
 }

@@ -2,9 +2,9 @@
 const wallpaper = document.querySelector("#wallpaper");
 const randomBtn = document.querySelector("#btn-random");
 
-// Wallpaper upload
-const wallpaperInput = document.querySelector("#file-input-wallpaper");
-const wallpaperBtn = document.querySelector("#upload-btn-wallpaper");
+// // Wallpaper upload
+// const wallpaperInput = document.querySelector("#file-input-wallpaper");
+// const wallpaperBtn = document.querySelector("#upload-btn-wallpaper");
 
 // Profile upload
 const profileInput = document.querySelector("#file-input-profile");
@@ -25,18 +25,18 @@ randomBtn.addEventListener("click", () => {
     wallpaper.src = wallpapers[index];
 });
 
-// Wallpaper upload
-wallpaperBtn.addEventListener("click", () => {
-    wallpaperInput.click();
-});
+// // Wallpaper upload
+// wallpaperBtn.addEventListener("click", () => {
+//     wallpaperInput.click();
+// });
 
-wallpaperInput.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (file) {
-        wallpaper.src = URL.createObjectURL(file);
-        wallpaperBtn.textContent = file.name;
-    }
-});
+// wallpaperInput.addEventListener("change", (e) => {
+//     const file = e.target.files[0];
+//     if (file) {
+//         wallpaper.src = URL.createObjectURL(file);
+//         wallpaperBtn.textContent = file.name;
+//     }
+// });
 
 // Profile upload
 profileBtn.addEventListener("click", () => {
@@ -88,6 +88,20 @@ form.addEventListener("submit",(e)=>{
 });
 
 
+const charCount = document.querySelector("#char-count span");
+const formInfo = document.querySelector("#form-info");
+
+formInfo.addEventListener("input",()=>{
+    let left = 100 - (formInfo.value.length);
+    charCount.textContent = left;
+
+    if(left >= 0){
+        charCount.style.color ="white";
+    }
+    else{
+        charCount.style.color="red";
+    }
+});
 
 
 
